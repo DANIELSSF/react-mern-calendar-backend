@@ -1,3 +1,6 @@
+# Varibles
+.env
+
 # Logs
 logs
 *.log
