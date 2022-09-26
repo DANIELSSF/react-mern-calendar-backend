@@ -50,6 +50,9 @@ const createUser = async (req, res = response) => {
 const loginUser = async (req, res = response) => {
 
     const { email, password } = req.body;
+    const id = req.query;
+
+    console.log(id);
 
     try {
 
