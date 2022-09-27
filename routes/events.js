@@ -28,7 +28,17 @@ route.post(
         validateFields
     ],
     createEvent);
-route.post('/:id', updateEvent);
+
+//* PUT
+route.put(
+    '/:id',
+    [
+        check('title', 'El titulo es obliagtorio').not().isEmpty(),
+        check('start', 'El evento debe tener una fecha de inicio').custom(isDate),
+        check('end', 'El evento debe tener una fecha de finalización').custom(isDate),
+        validateFields
+    ],
+    updateEvent);
 
 //* DELETE
 route.delete('/:id', deleteEvent);
