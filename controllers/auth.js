@@ -50,7 +50,7 @@ const createUser = async (req, res = response) => {
 const loginUser = async (req, res = response) => {
 
     const { email, password } = req.body;
-    
+
     try {
 
         const usuario = await Usuario.findOne({ email });
@@ -103,6 +103,7 @@ const renewToken = async (req, res = response) => {
 
     res.json({
         ok: true,
+        uid, name,
         token,
     });
 
