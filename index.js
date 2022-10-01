@@ -27,6 +27,11 @@ app.use("/api/auth", require("./routes/auth"));
 //TODO: Rutas para los eventos
 app.use("/api/events", require("./routes/events"));
 
+//* En caso de no encontrar ninguna ruta
+app.get("*", (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
 //* Escuchar peticiones
 app.listen(process.env.PORT, () => {
     console.log(`Server running in the port ${process.env.PORT}`);
